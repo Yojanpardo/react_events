@@ -1,68 +1,27 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# React events 
+En este proyecto vamos a consumir una API de Eventbrite para poder mostrar diferentes eventos de determinada categoría
 
-## Available Scripts
+## Registrarse en eventbrite
+Debemos registrarnos en enventbrite y consegir un API key para poder hacer llamados y traer información desde la misma.
 
-In the project directory, you can run:
+## Context API 
+Está disponible desde la version 16.3, se puede pasar state o funciones desde el componente principal hacia los hijos sin necesidad de pasar cada componente.  
+También se puede cambiar el state desde los hijos (o ejecutar una funsión que lo actualice)   
+Los Props se pueden seguir utilizando, si el proyecto es sencillo es mejor usar Props en aplicaciones con 4 componentes o menos.  
 
-### `npm start`
+## Palabras claves 
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Provider
+Donde se crean los datos, state y funciones
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### Consumer
+donde se conumen los datos o se utilizan las funciones
 
-### `npm test`
+## context en accion
+Si tenemos un proyecto con 4 componentes podemos pasar datos desde nuestro componente padre al hijo directamente sin necesidad de pasar componente por componente, esto nos ayuda mucho a optimizar el código de nuestra aplicación.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Para este proyecto vamos a hacer la consulta con axios, que ya veremos más adelante como funciona. Se instala de la siguiente manera:
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+~~~sh
+npm install --save axios
+~~~
