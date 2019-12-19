@@ -1,7 +1,18 @@
 import React, { Component } from 'react';
+import {CategoriesConsumer} from '../context/CategoriesContext';
 
 class Form extends Component{
-    state = {}
+    state = {
+        name : '',
+        category : '' 
+    }
+
+    getEventData = e => {
+        this.setState({
+            [e.target.name] : e.target.value
+        })
+    }
+
     render(){
         return(
             <form>
@@ -17,14 +28,27 @@ class Form extends Component{
                             className="uk-input" 
                             name="name" 
                             placeholder="Event or city name"
+                            onChange={this.getEventData}
                         />
                     </div>
                     <div className="uk-margin" ukmargin="true">
                         <select 
                             className="uk-select"
                             name="category"
+                            onChange={this.getEventData}
                         >
-
+                            <option value="">Select a category...</option>
+                            <CategoriesConsumer>
+                                 {(value) => {
+                                     return(
+                                         value.categories.map(category => (
+                                             <option value={category.id} key={category.id}  data-uk-form-select>
+                                                 {category.name_localized}
+                                             </option>
+                                         ))
+                                     )
+                                 }}
+                            </CategoriesConsumer>
                         </select>
                     </div>
                     <div className="uk-margin" ukmargin="true">

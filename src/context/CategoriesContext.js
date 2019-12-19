@@ -18,12 +18,12 @@ class CategoriesProvider extends Component {
     }
 
     getCategories = async () => {
-        let url = `https://www.eventbriteapi.com/v3/categories/?token=${this.token}&locale=es_ES`
+        let url = `https://www.eventbriteapi.com/v3/categories/?token=${this.token}&locale=es_ES`;
 
         let categories = await axios.get(url);
         this.setState({
             categories : categories.data.categories
-        })
+        });
     }
 
     render(){

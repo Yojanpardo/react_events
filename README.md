@@ -25,3 +25,6 @@ Para este proyecto vamos a hacer la consulta con axios, que ya veremos más adel
 ~~~sh
 npm install --save axios
 ~~~
+
+### Utilizando el context
+El provider tiene todos los datos, entonces le podemos pasar al formulario muy facil importando el consumer en nuestro componente. Básicamente Context nos permite pasar datos de un componente a otro y evita la utilización de props.
